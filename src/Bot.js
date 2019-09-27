@@ -28,6 +28,11 @@ module.exports = class Bot extends Client {
     async ready() {
         this.logger.info(`Bot logged in as ${this.user.username}#${this.user.discriminator}`);
 
+        await new Promise((resolve, reject) => {
+            pm2.connect(error => error ? reject(error) : resolve());
+        }).catch(_ => this.logger.onError("Failed to connect to pm2"));
+        this.logger.info("Connected to pm2");
+
         this.on("message", async message => {
 
             if (message.author.id != this.config.Bot.Owner) return;
@@ -47,10 +52,6 @@ module.exports = class Bot extends Client {
                 }
             }
         });
-
-        await new Promise((resolve, reject) => {
-            pm2.connect(error => error ? reject(error) : resolve());
-        }).catch(_ => this.logger.onError("Failed to connect to pm2"));
     }
 
     async exit() {
@@ -59,6 +60,5 @@ module.exports = class Bot extends Client {
 
         pm2.disconnect();
         this.logger.info("Disconnected from pm2");
-
     }
 }

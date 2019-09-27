@@ -1,5 +1,5 @@
 const util = require("util");
-const handler = require("../LogHandler");
+const handler = require("./LogHandler");
 
 module.exports = class Logger {
     
