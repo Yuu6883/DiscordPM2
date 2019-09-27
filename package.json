@@ -1,0 +1,26 @@
+{
+  "name": "discord-pm2",
+  "version": "1.0.0",
+  "description": "It's pm2 but integrated with Discord bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yuu6883/DiscordPM2.git"
+  },
+  "keywords": [
+    "pm2",
+    "discord"
+  ],
+  "author": "Yuu6883",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yuu6883/DiscordPM2/issues"
+  },
+  "homepage": "https://github.com/Yuu6883/DiscordPM2#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  }
+}
