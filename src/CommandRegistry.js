@@ -37,7 +37,7 @@ module.exports = class CommandRegistry {
             return true;
 
         } catch (_) {
-            this.logger.onError(`Fail to load module at path: ${path}`);
+            this.logger.onError(`Fail to load module at path: ${path}`, _);
             return false;
         }
 

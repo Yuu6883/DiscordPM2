@@ -12,7 +12,7 @@ module.exports = {
             if (error) {
                 message.reply(`Error: ${error.message}`);
             } else {
-                message.reply(`Process **${name}** restarted!`);
+                message.reply(`Process **${name}** reloaded!`);
             }
         })
     }

@@ -1,4 +1,4 @@
-const { Client } = require("discord.js");
+const { Client, RichEmbed } = require("discord.js");
 const pm2 = require("pm2");
 
 const CommandRegistry = require("./CommandRegistry");
@@ -52,6 +52,14 @@ module.exports = class Bot extends Client {
                 }
             }
         });
+    }
+
+    embed(title) {
+        return new RichEmbed()
+            .setTitle(title)
+            .setColor("AQUA")
+            .setThumbnail(this.user.displayAvatarURL)
+            .setTimestamp();
     }
 
     async exit() {
