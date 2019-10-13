@@ -52,6 +52,10 @@ module.exports = class Bot extends Client {
                 }
             }
         });
+
+        this.on("error", e => {
+            this.logger.onError(e);
+        });
     }
 
     embed(title) {
