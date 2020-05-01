@@ -1,11 +1,10 @@
 const fs = require("fs");
 const path = require("path");
-const configPath = __dirname + "/bot-config.json";
+const configPath = path.resolve(__dirname, "bot-config.json");
 
 let DefaultBotConfig = {
     Token: "",
     Owner: "",
-    CommandFolder: path.resolve(__dirname + "/../../commands"),
 }
 
 if (!fs.existsSync(configPath)) {

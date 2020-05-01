@@ -1,7 +1,7 @@
 {
   "name": "discord-pm2",
   "version": "1.0.0",
-  "description": "It's pm2 but integrated with Discord bot",
+  "description": "PM2 integrated with Discord bot",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/Yuu6883/DiscordPM2#readme",
   "dependencies": {
-    "discord.js": "^11.5.1",
-    "pm2": "^3.5.1"
+    "discord.js": "^12.2.0",
+    "pm2": "^4.4.0"
   }
 }

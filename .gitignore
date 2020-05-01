@@ -1,4 +1,8 @@
+# Config
 *-config.json
+
+# Custom commands
+commands/*
 
 # Logs
 logs

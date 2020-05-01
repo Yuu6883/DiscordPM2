@@ -1,4 +1,5 @@
 const { Client, RichEmbed } = require("discord.js");
+const path = require("path");
 const pm2 = require("pm2");
 
 const CommandRegistry = require("./CommandRegistry");
@@ -16,7 +17,11 @@ module.exports = class Bot extends Client {
         this.commands = [];
         this.logger = new Logger();
         this.registry = new CommandRegistry(this);
+    }
 
+    init() {
+        this.registry.registerAll(path.resolve(__dirname, "..", "default_commands"))
+        this.registry.registerAll(path.resolve(__dirname, "..", "commands"))
         if (this.config.Bot.Token)
             this.login(this.config.Bot.Token);
     }
