@@ -38,12 +38,17 @@ module.exports = class CommandRegistry {
     /** @param {string} path */
     register(path) {
 
-        if (!path || this.disabledCommands.some(n => path.includes(`${n}.js`)))
+        if (!path || !path.endsWith(".js") || this.disabledCommands.some(n => path.includes(`${n}.js`)))
             return false;
 
         try {
             delete require.cache[require.resolve(path)];
+            /** @type {BaseCommand} */
             const command = require(path);
+            if (typeof command != "object" || 
+                !command.run || typeof command.run != "function" ||
+                !command.verify || typeof command.verify != "function")
+                return false;
             this.bot.commands.push(command);
             return true;
 

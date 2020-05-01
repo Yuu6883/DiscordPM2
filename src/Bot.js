@@ -1,4 +1,4 @@
-const { Client, RichEmbed } = require("discord.js");
+const { Client, MessageEmbed } = require("discord.js");
 const path = require("path");
 const pm2 = require("pm2");
 
@@ -64,7 +64,7 @@ module.exports = class Bot extends Client {
     }
 
     embed(title) {
-        return new RichEmbed()
+        return new MessageEmbed()
             .setTitle(title)
             .setColor("AQUA")
             .setThumbnail(this.user.displayAvatarURL)

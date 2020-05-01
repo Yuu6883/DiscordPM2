@@ -17,8 +17,9 @@ module.exports = {
             let embed = this.embed("Process List");
 
             if (processList.length > 10) {
-                embed.setDescription(`There're more than 10 processes, ` + 
-                    `${processList.slice(10).map(p => p.name).join(", ")}`);
+                embed.setDescription(`There're more than 10 processes, not showing: **` + 
+                    `${processList.slice(10).map(p => p.name).join("**, **")}**`);
+                processList = processList.slice(10);
             }
 
             processList.forEach((ps, i) => {
@@ -35,7 +36,10 @@ module.exports = {
                 embed.addField(`Process ${i + 1}`, "```prolog\n" + Table(tbl) + "\n```");
             });
             
-            message.reply(embed);
+            if (processList.length)
+                message.reply(embed);
+            else
+                message.reply("**no PM2 process running**");
         });
 
     }
