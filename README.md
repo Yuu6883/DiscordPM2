@@ -2,7 +2,7 @@
 It's pm2 but integrated with Discord bot
 
 ### Progress
-The bot currently supports `delete, reload, restart, list, describe` commands.
+The bot currently supports `delete, reload, restart, list, describe, log` commands.
 
 ### Demo
 ![](https://github.com/Yuu6883/DiscordPM2/blob/master/demo/restart.png?raw=true)
