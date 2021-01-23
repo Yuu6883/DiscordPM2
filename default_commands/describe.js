@@ -26,14 +26,14 @@ module.exports = {
                 name: ps.name,
                 pid:  ps.pid,
                 mem: (ps.monit.memory / 1024 / 1024).toFixed(1) + " MB",
-                cpu: (ps.monit.cpu * 100).toFixed(1),
+                cpu: (ps.monit.cpu).toFixed(1) + "%",
                 uptime:   Time.short(Date.now() - ps.pm2_env.pm_uptime),
                 status:   ps.pm2_env.status,
                 instance: ps.pm2_env.instances
             }
             
             let embed = this.embed(`Process ${name}`)
-                .setDescription("```prolog\n" + Table(tbl) + "\n```")
+                .setDescription("```yaml\n" + Table(tbl) + "\n```")
             
             message.reply(embed);
         });

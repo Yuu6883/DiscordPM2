@@ -137,7 +137,7 @@ module.exports = class Bot extends Client {
             .setTimestamp();
     }
 
-    /** @returns {Promise<ProcessInfo[]>} */
+    /** @returns {Promise<import("pm2").ProcessDescription[]>} */
     async getProcessList() {
         return new Promise((resolve, reject) => {
             this.pm2.list((error, processList) => {

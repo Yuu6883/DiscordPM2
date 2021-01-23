@@ -19,17 +19,16 @@ module.exports = {
 
         processList.forEach((ps, i) => {
 
-            console.log(ps);
             let tbl = {
                 name: ps.name,
                 pid:  ps.pid,
                 mem: (ps.monit.memory / 1024 / 1024).toFixed(1) + " MB",
-                cpu:    (ps.monit.cpu * 100).toFixed(2),
+                cpu:    (ps.monit.cpu).toFixed(1) + "%",
                 uptime:   Time.short(Date.now() - ps.pm2_env.pm_uptime),
                 status:   ps.pm2_env.status
             };
 
-            embed.addField(`Process ${i + 1}`, "```prolog\n" + Table(tbl) + "\n```");
+            embed.addField(`Process ${i + 1}`, "```yaml\n" + Table(tbl) + "\n```");
         });
         
         if (processList.length)
