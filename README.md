@@ -1,5 +1,5 @@
 # DiscordPM2
-It's pm2 but integrated with Discord bot
+It's [pm2](https://pm2.keymetrics.io/) but integrated with Discord bot
 
 ### Progress
 The bot currently supports `delete, reload, restart, list, describe, log` commands.
@@ -13,5 +13,5 @@ The bot currently supports `delete, reload, restart, list, describe, log` comman
 ![](https://github.com/Yuu6883/DiscordPM2/blob/master/demo/log.png?raw=true)
 
 ### TODO
-1. More commands (start, log, save, stop, etc) and realtime monitoring
-2. An monitor server API for the bot to connect to, so the bot can monitor processes running on seperate machines
+1. More commands (start, save, stop, etc) and realtime monitoring
+2. An monitor server API for the bot to connect to, so the bot can monitor processes running on a distributed system
