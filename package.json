@@ -22,6 +22,6 @@
   "homepage": "https://github.com/Yuu6883/DiscordPM2#readme",
   "dependencies": {
     "discord.js": "^12.2.0",
-    "pm2": "^4.5.1"
+    "pm2": "^5.2.0"
   }
 }
