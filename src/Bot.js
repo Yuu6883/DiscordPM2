@@ -45,7 +45,11 @@ module.exports = class Bot extends Client {
 
         this.on("message", async message => {
 
-            if (message.author.id != this.config.Bot.Owner) return;
+            if (Array.isArray(this.config.Bot.Owner)) {
+                if (!this.config.Bot.Owner.includes(message.author.id)) return;
+            } else {
+                if (message.author.id !== this.config.Bot.Owner) return;
+            }
             
             for (let command of this.commands) {
 
